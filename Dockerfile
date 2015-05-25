@@ -4,5 +4,5 @@ MAINTAINER ziphain ziphain@gmail.com
  
 RUN apt-get install -y apache2 openssh-server
 RUN /etc/init.d/apache2 start
-RUN apt-get install -y vim
+RUN apt-get install vim -y
 CMD /bin/bash
