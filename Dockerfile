@@ -1,4 +1,4 @@
-# This dockerfile uses the ubuntu image to construct apache2 http server
+#This dockerfile uses the ubuntu image to construct apache2 http server
 FROM ubuntu:14.04
 MAINTAINER ziphain ziphain@gmail.com
 
@@ -12,6 +12,7 @@ RUN apt-get install -y apache2 openssh-server curl apt-transport-https \
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 
 RUN git clone https://github.com/jpetazzo/dind
+RUN mkdir dind
 
 ADD ./dind/wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
