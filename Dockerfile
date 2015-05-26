@@ -2,10 +2,20 @@
 FROM ubuntu:14.04
 MAINTAINER ziphain ziphain@gmail.com
 
-RUN apt-get install -y apache2 openssh-server curl
+RUN apt-get install -y apache2 openssh-server curl apt-transport-https \
+	ca-certificates \
+	lxc \
+	iptables
+
+
+# install Docker
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
-RUN /etc/init.d/apache2 start
 
-RUN reboot
+ADD ./wrapdocker /usr/local/bin/wrapdocker
+RUN chmod +x /usr/local/bin/wrapdocker
 
-CMD /bin/bash
+
+VOLUME /var/lib/docker
+CMD ["wrapdocker"]
+
+
