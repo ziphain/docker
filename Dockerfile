@@ -11,11 +11,6 @@ RUN apt-get install -y apache2 openssh-server curl apt-transport-https \
 # install Docker
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 
-RUN mkdir dind
-RUN ls ./dind
-RUN git clone https://github.com/jpetazzo/dind
-RUN ls ./dind
-
 ADD ./dind/wrapdocker /usr/local/bin/wrapdocker
 RUN chmod +x /usr/local/bin/wrapdocker
 
