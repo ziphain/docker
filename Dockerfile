@@ -6,4 +6,6 @@ RUN apt-get install -y apache2 openssh-server curl
 RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 RUN /etc/init.d/apache2 start
 
+RUN reboot
+
 CMD /bin/bash
