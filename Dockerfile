@@ -2,7 +2,7 @@
 FROM ubuntu:14.04
 MAINTAINER ziphain ziphain@gmail.com
 
-RUN apt-get update
+RUN apt-get update -qq
 RUN apt-get install -y apache2 openssh-server curl apt-transport-https \
 	ca-certificates \
 	lxc \
