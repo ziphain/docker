@@ -12,6 +12,7 @@ MAINTAINER ziphain ziphain@gmail.com
 #RUN curl -sSL https://get.docker.com/ubuntu/ | sh
 
 RUN mkdir test_folder
+RUN mkdir dind
 RUN git clone https://github.com/jpetazzo/dind
 
 
